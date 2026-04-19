@@ -107,3 +107,18 @@ hashmap.c:125:26: error: implicit declaration of function ‘search’; did you 
       |                          bsearch
 hashmap.c:125:26: error: initialization of ‘Pair *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
 f42ffa5
+Sun Apr 19 10:28:12 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:125:26: error: too few arguments to function ‘bsearch’
+  125 |     Pair* datoEliminar = bsearch(map, key);
+      |                          ^~~~~~~
+In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdlib.h:965,
+                 from test.c:2:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/stdlib-bsearch.h:20:1: note: declared here
+   20 | bsearch (const void *__key, const void *__base, size_t __nmemb, size_t __size,
+      | ^~~~~~~
+f3e9200
