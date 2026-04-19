@@ -122,11 +122,17 @@ Pair * searchMap(HashMap * map,  char * key) {
 void eraseMap(HashMap * map,  char * key) {    
     if(map == NULL || key == NULL) return;
     
-    Pair* pair = search(map, key);
-    
-    if(pair != NULL){
-        pair -> key = NULL;
-        map -> size--;
+    int pos = hash(key, map -> capacity);
+    int posI = pos;
+
+    while(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
+        if(strcmp(map -> buckets[pos] -> key, key) == 0 && map -> buckets[pos] -> key != NULL){
+            map -> buckets[pos] -> key = NULL;
+            map -> size--;
+            return;
+        }
+        pos = (pos + 1) % map -> capacity;
+        if(pos == posI) break;     
     }
 }
 

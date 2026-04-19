@@ -134,3 +134,9 @@ hashmap.c:125:18: error: implicit declaration of function ‘search’; did you 
       |                  bsearch
 hashmap.c:125:18: error: initialization of ‘Pair *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
 bda1aaa
+Sun Apr 19 10:44:52 PM UTC 2026: 
+ hashmap.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+ tests:  11|2
+total_score: 40/60
+3a0b5cd
