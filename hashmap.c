@@ -179,8 +179,21 @@ Pair * nextMap(HashMap * map) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    if(map == NULL) return;
 
+    Pair ** bucketsA = map -> buckets;
+    int tamañoA = map -> capacity;
 
+    map -> capacity *= 2;
+    map -> buckets = (Pair**)calloc(map -> capacity, sizeof(Pair *));
+    map -> size = 0;
+
+    for(int i = 0; tamañoA > i; i++){
+        if(bucketsA[i] != NULL && bucketsA[i] -> key != NULL){
+            insertMap(map, bucketsA[i] -> key, bucketsA[i] -> value);
+        }
+    }
+    free(bucketsA);
 }
 
 
