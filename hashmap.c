@@ -122,10 +122,10 @@ Pair * searchMap(HashMap * map,  char * key) {
 void eraseMap(HashMap * map,  char * key) {    
     if(map == NULL || key == NULL) return;
     
-    Pair* datoEliminar = bsearch(map, key);
+    Pair* pair = search(map, key);
     
-    if(datoEliminar != NULL){
-        datoEliminar -> key = NULL;
+    if(pair != NULL){
+        pair -> key = NULL;
         map -> size--;
     }
 }
