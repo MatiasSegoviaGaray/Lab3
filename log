@@ -14,3 +14,20 @@ Thu Apr 16 08:22:19 PM UTC 2026:
  tests:  1|6
 total_score: 5/60
 f6a5356
+Sun Apr 19 04:21:38 PM UTC 2026: 
+ hashmap.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:53:14: error: ‘map’ undeclared (first use in this function); did you mean ‘mapa’?
+   53 |         free(map);
+      |              ^~~
+      |              mapa
+hashmap.c:53:14: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c: In function ‘insertMap’:
+hashmap.c:78:34: error: ‘map->buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   78 |         if(strcmp(map -> buckets -> key, key) == 0) return;
+      |                                  ^~
+      |                   (*            )
+3e00b19
