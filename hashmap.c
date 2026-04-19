@@ -143,8 +143,8 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     if(map == NULL) return NULL;
 
-    for(int i = map -> current +1; map -> capacity > i; i++){
-        if(map -> buckets[i] != NULL || map -> buckets[i] -> key != NULL){
+    for(int i = 0; map -> capacity > i; i++){
+        if(map -> buckets[i] != NULL && map -> buckets[i] -> key != NULL){
             map -> current = i;
             return map -> buckets[i];
         }
@@ -154,7 +154,14 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
+    if(map == NULL) return NULL;
 
+    for(int i = map -> current + 1; map -> capacity > i; i++){
+        if(map -> buckets[i] != NULL  && map -> buckets[i] != NULL){
+            map -> current = i;
+            return map -> buckets[i];
+        }
+    }
     return NULL;
 }
 
