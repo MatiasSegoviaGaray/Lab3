@@ -75,7 +75,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     int posI = pos;
 
     while(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
-        if(strcmp(map -> buckets -> key, key) == 0) return;
+        if(strcmp(map -> buckets[pos] -> key, key) == 0) return;
         pos = (pos + 1) % map -> capacity;
         if(pos == posI) return;
     }
