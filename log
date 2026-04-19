@@ -76,3 +76,16 @@ hashmap.c:106:60: error: too few arguments to function ‘strcmp’
   156 | extern int strcmp (const char *__s1, const char *__s2)
       |            ^~~~~~
 3b9fdfa
+Sun Apr 19 04:59:39 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:100:36: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+  100 |     if(map == NULL || key == NULL) return;
+      |                                    ^~~~~~
+hashmap.c:99:8: note: declared here
+   99 | Pair * searchMap(HashMap * map,  char * key) {
+      |        ^~~~~~~~~
+1d7bb8d

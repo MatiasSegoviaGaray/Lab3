@@ -103,7 +103,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     int posI = pos;
 
     while(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
-        if(strcmp(map -> buckets[pos] -> key, key) == 0 && strcmp(map -> buckets[pos]) -> key != NULL){
+        if(strcmp(map -> buckets[pos] -> key, key) == 0 && map -> buckets[pos] -> key != NULL){
             map -> current = pos;
             return map -> buckets[pos];
         }
